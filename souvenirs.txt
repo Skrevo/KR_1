@@ -1,0 +1,1 @@
+Souvenir{name='cup', manufacture=Manufacture(name=zbr, country=ukr), dateOfProduce='10102020', price=21.0}
