@@ -1,34 +1,35 @@
 package org.example;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         Souvenir s1 = new Souvenir("cup", new Manufacture("Zbroia","Ukraine"),"10-07-2020",40);
         String fileNameSouvenirs = "souvenirs.txt";
         List<Souvenir> souvenirList = new ArrayList<>();
+        Set<Manufacture> manufactureList = new HashSet<>();
         String fileNameManufactures = "manufactures.txt";
         Scanner sc = new Scanner(System.in);
         while (!sc.nextLine().equals("q")) {
-            System.out.println("Please select action what you want to do:" + '\'' +
-                                "type s - to show all souvenirs" + '\'' +
-                                "type m - to show all manufactures" + '\'' +
-                                "type es - to edit souvenirs" + '\'' +
-                                "type em - to edit manufactures");
+            System.out.println("""
+                                Please select action what you want to do:
+                                type s - to show all souvenirs
+                                type m - to show all manufactures
+                                type add - to add souvenirs or manufactures
+                                type em - to edit manufactures
+                                type es - to edit souvenirs""");
             String choose = sc.nextLine();
             if (choose.equals("s")) {
-                showAllSouvenirs(fileNameSouvenirs);
+                showAllSouvenirs(fileNameSouvenirs, souvenirList);
             }
-            if (choose.equals("es")){
-                //edit();
+            if (choose.equals("add")){
                 souvenirList.add((Souvenir) edit());
+                manufactureList.add(((Souvenir) edit()).getManufacture());
                 write(fileNameSouvenirs, souvenirList);
+                write(fileNameManufactures,manufactureList.stream().toList());
             }
         }
-        System.out.println(souvenirList);
     }
 
     private static Object edit() {
@@ -48,7 +49,6 @@ public class Main {
     }
 
     private static void write(String fileName, List list) throws IOException {
-        System.out.println(list);
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
         for(int i = 0; i<list.size();i++) {
                 bw.write(String.valueOf(list.get(i)));
@@ -57,14 +57,14 @@ public class Main {
         }
     }
 
-    private static void showAllSouvenirs(String fileName) throws IOException {
-        List<String> list = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        for (int i = 0; i <list.size(); i++) {
-            br.skip(i);
-            String line = br.readLine();
-            list.add(line);
+    private static void showAllSouvenirs(String fileName, List list) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            for (int i = 0; i < list.size(); i++) {
+                String line = br.readLine();
+                System.out.println(line);
+                list.add(line);
+            }
         }
-
+        System.out.println(list);
     }
 }
