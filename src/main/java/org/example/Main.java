@@ -5,11 +5,11 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Souvenir s1 = new Souvenir("cup", new Manufacture("Zbroia","Ukraine"),"10-07-2020",40);
+//        Souvenir s1 = new Souvenir("cup", new Manufacture("Zbroia","Ukraine"),"10-07-2020",40);
         String fileNameSouvenirs = "souvenirs.txt";
+        String fileNameManufactures = "manufactures.txt";
         List<Souvenir> souvenirList = new ArrayList<>();
         Set<Manufacture> manufactureList = new HashSet<>();
-        String fileNameManufactures = "manufactures.txt";
         Scanner sc = new Scanner(System.in);
         while (!sc.nextLine().equals("q")) {
             System.out.println("""
@@ -20,9 +20,10 @@ public class Main {
                                 type em - to edit manufactures
                                 type es - to edit souvenirs""");
             String choose = sc.nextLine();
-            if (choose.equals("s")) {
-                showAllSouvenirs(fileNameSouvenirs, souvenirList);
-            }
+            if (choose.equals("s"))
+                showAll(fileNameSouvenirs);
+            if (choose.equals("m"))
+                showAll(fileNameManufactures);
             if (choose.equals("add")){
                 souvenirList.add((Souvenir) edit());
                 manufactureList.add(((Souvenir) edit()).getManufacture());
@@ -57,14 +58,15 @@ public class Main {
         }
     }
 
-    private static void showAllSouvenirs(String fileName, List list) throws IOException {
+    private static void showAll(String fileName) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            for (int i = 0; i < list.size(); i++) {
-                String line = br.readLine();
-                System.out.println(line);
-                list.add(line);
+            long lines = 0;
+            String line;
+            while ((line = br.readLine()) != null) {
+                lines++;
+                System.out.println(lines + " " + line);
             }
         }
-        System.out.println(list);
+
     }
 }
