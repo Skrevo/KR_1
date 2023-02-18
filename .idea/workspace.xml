@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb814f7e-caaf-4ab9-bc61-f18bf7ad0318" name="Changes" comment="showAll">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Souvenir.java" afterDir="false" />
+    <list default="true" id="eb814f7e-caaf-4ab9-bc61-f18bf7ad0318" name="Changes" comment="all function but sms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manufactures.txt" beforeDir="false" afterPath="$PROJECT_DIR$/manufactures.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souvenirs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/souvenirs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Manufacture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Manufacture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Souvenir.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,14 +107,22 @@
       <option name="project" value="LOCAL" />
       <updated>1676488303370</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="all function but sms">
+      <created>1676745961493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676745961493</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Souvenir, Manufacture" />
     <MESSAGE value="how to write and read" />
     <MESSAGE value="showAll" />
-    <option name="LAST_COMMIT_MESSAGE" value="showAll" />
+    <MESSAGE value="all function but sms" />
+    <option name="LAST_COMMIT_MESSAGE" value="all function but sms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

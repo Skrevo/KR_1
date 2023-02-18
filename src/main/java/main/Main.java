@@ -5,11 +5,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
+    final String FILE_NAME_SOUVENIR = "souvenirs.txt";
+    final String FILE_NAME_MANUFACTURE = "manufactures.txt";
     public static void main(String[] args) throws IOException {
         Main main = new Main();
-        //main.run();
-        String fileNameSouvenirs = "souvenirs.txt";
-        String fileNameManufactures = "manufactures.txt";
+        main.run();
+    }
+    private void run() throws IOException {
         List<Souvenir> souvenirList = Arrays.asList(
                 new Souvenir("cup", new Manufacture("Zbroia", "Ukraine"),"2018",44),
                 new Souvenir("hat", new Manufacture("Zbroia", "Ukraine"),"2015",35.5),
@@ -44,26 +46,26 @@ public class Main {
                 object = edit();
                 if (object.getClass() == Manufacture.class) {
                     manufactureSet.add((Manufacture) object);
-                    write(fileNameManufactures, manufactureSet.stream().toList());
+                    write(FILE_NAME_MANUFACTURE, manufactureSet.stream().toList());
                 }
                 if (object.getClass() == Souvenir.class) {
-                souvenirList.add((Souvenir) object);
-                write(fileNameSouvenirs, souvenirList);
-                manufactureSet.add(((Souvenir) object).getManufacture());
-                write(fileNameManufactures,manufactureSet.stream().toList());
+                    souvenirList.add((Souvenir) object);
+                    write(FILE_NAME_SOUVENIR, souvenirList);
+                    manufactureSet.add(((Souvenir) object).getManufacture());
+                    write(FILE_NAME_MANUFACTURE,manufactureSet.stream().toList());
                 }
             }
             if (choose.equals("ds")){
                 System.out.println("write a name of souvenir: ");
                 String souvenir = sc.next();
                 souvenirList = souvenirList.stream().filter(s -> !s.getName().equals(souvenir)).collect(Collectors.toList());
-                write(fileNameSouvenirs, souvenirList);
+                write(FILE_NAME_SOUVENIR, souvenirList);
             }
             if (choose.equals("dm")) {
                 System.out.println("write a name of manufacture: ");
                 String manufacture = sc.nextLine();
                 manufactureSet = manufactureSet.stream().filter(m -> !m.getName().equals(manufacture)).collect(Collectors.toSet());
-                write(fileNameManufactures, manufactureSet.stream().toList());
+                write(FILE_NAME_MANUFACTURE, manufactureSet.stream().toList());
             }
             if (choose.equals("sm")) {
                 System.out.println("write a name of manufacture to show souvenirs: ");
@@ -100,13 +102,13 @@ public class Main {
                 String manufacture = sc.next();
                 souvenirList = souvenirList.stream().filter(s -> !s.getManufacture().getName().equals(manufacture)).collect(Collectors.toList());
                 manufactureSet = manufactureSet.stream().filter(m -> !m.getName().equals(manufacture)).collect(Collectors.toSet());
-                write(fileNameSouvenirs, souvenirList);
-                write(fileNameManufactures, manufactureSet.stream().toList());
+                write(FILE_NAME_SOUVENIR, souvenirList);
+                write(FILE_NAME_MANUFACTURE, manufactureSet.stream().toList());
             }
         }
     }
 
-    private static Object edit() {
+    private Object edit() {
         System.out.println("Write manufacture or souvenir: ");
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
