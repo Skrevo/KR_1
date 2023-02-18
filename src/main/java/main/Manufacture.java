@@ -1,4 +1,4 @@
-package org.example;
+package main;
 
 import lombok.*;
 
@@ -6,6 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 @ToString
 public class Manufacture {
     private String name;
