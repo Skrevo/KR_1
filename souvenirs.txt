@@ -1,2 +1,1 @@
-Souvenir{name='cup', manufacture=Manufacture(name=Zbroia, country=Ukraine), dateOfProduce='10-10-2020', price=44.0}
-Souvenir{name='pen', manufacture=Manufacture(name=Ukrsuvenir, country= Ukraine), dateOfProduce=' 10-09-2016', price=42.0}
+Souvenir(name=pen, manufacture=Manufacture(name=Ukrsuvenir, country=Ukraine)), dateOfProduce=2021, price=211.0)

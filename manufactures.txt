@@ -1,4 +1,1 @@
-Manufacture(name=Suvenir&Co, country= USA)
-Manufacture(name=Imperia, country= UK
-Manufacture(name=Ukrsuvenir, country= Ukraine)
-Manufacture(name=Zbroia, country= Ukraine)
+Manufacture(name=Ukrsuvenir, country=Ukraine)
