@@ -64,7 +64,11 @@ public class Main {
                     souvenirList.stream().filter(s -> s.getPrice() < price).forEach(System.out::println);
                 }
                 case 9 -> {
-                    souvenirList.stream().map(s -> s.getManufacture());//not ready
+                    for (int i = 0; i < manufactureSet.size(); i++) {
+                        String manufacture = manufactureSet.stream().toList().get(i).getName();
+                        System.out.println("The souvenirs of" + manufacture);
+                        souvenirList.stream().filter(s -> s.getManufacture().getName().equals(manufacture)).forEach(System.out::println);
+                    }
                 }
                 case 10 -> {
                     System.out.println("write a name of souvenir and year of produce split by ',': ");

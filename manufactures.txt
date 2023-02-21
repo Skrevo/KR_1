@@ -1,1 +1,3 @@
+Manufacture(name= Zbroia, country=Ukraine)
 Manufacture(name=Ukrsuvenir, country=Ukraine)
+Manufacture(name=Polish Suvenirs, country=Poland)

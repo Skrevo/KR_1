@@ -1,1 +1,4 @@
-Souvenir(name=pen, manufacture=Manufacture(name=Ukrsuvenir, country=Ukraine)), dateOfProduce=2021, price=211.0)
+Souvenir(name=pen, manufacture=Manufacture(name=Ukrsuvenir, country=Ukraine))), dateOfProduce=2021, price=211.0)
+Souvenir(name=cup, manufacture=Manufacture(name= Zbroia, country=Ukraine), dateOfProduce=2018, price=45.5)
+Souvenir(name=hat, manufacture=Manufacture(name=Ukrsuvenir, country=Ukraine), dateOfProduce=2019, price=120.0)
+Souvenir(name=magnet, manufacture=Manufacture(name=Polish Suvenirs, country=Poland), dateOfProduce=2022, price=41.99)
